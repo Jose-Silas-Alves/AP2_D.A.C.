@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<xhtml xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+	<h:head><title>Cadastro</title></h:head>
+	<h:body>
+		<center>
+			<h:form id="formulario3">
+				 <p:messages id="messages" showDetail="true" closable="true">
+	            	<p:autoUpdate/>
+	        	</p:messages>
+				<p:panel header="Area de Cadastro">
+					<h:panelGrid columns="1">
+					
+					
+						<h:outputText value="nome:"/>
+						<h:inputText value="#{loginBean.login.nome}"/>
+						
+						<h:outputText value="nome de usuario:"/>
+						<h:inputText value="#{loginBean.login.user}"/>
+					
+						<h:outputText value="senha:"/>
+						<h:inputSecret value="#{loginBean.login.password}"/>
+						
+						<h:outputText value="data de cadastro"/>
+						<p:datePicker value="#{loginBean.login.datacadastro}"/>
+						<p:commandButton value="Cadastrar" action="#{loginBean.salvar}" update="formulario3"/>
+					</h:panelGrid>
+				</p:panel>
+			</h:form>
+		</center>
+		<center>
+			<h:panelGrid columns="1">
+				<h:button outcome="index" value="voltar" />	
+			</h:panelGrid>
+		</center>
+	</h:body>
+</xhtml>

@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<xhtml xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+	<h:head><title>Listagem de incidente</title></h:head>
+	<h:body>	
+		<h:form id="formulario5">
+			 <p:messages id="messages" showDetail="true" closable="true">
+	            <p:autoUpdate/>
+	        </p:messages>
+			<p:panel header="Relatorios feitos">
+				<p:dataTable value="#{relatorioBean.lista}" var="r">
+					<p:column headerText="id_relatorio"><h:outputLabel value="#{r.id}"/> </p:column>
+					<p:column headerText="vitima"><h:outputLabel value="#{r.vitima_nome}"/></p:column>
+					<p:column headerText="sexo"><h:outputLabel value="#{r.vitima_sexo}"/></p:column>
+					<p:column headerText="idade"><h:outputLabel value="#{r.vitima_idade}"/></p:column>
+					<p:column headerText="serie/turma"><h:outputLabel value="#{r.vitima_serie}"/></p:column>
+					<p:column headerText="agressor"><h:outputLabel value="#{r.vitima_Endereco}"/></p:column>
+					<p:column headerText="sexo"><h:outputLabel value="#{r.vitima_Endereco}"/></p:column>
+					<p:column headerText="idade"><h:outputLabel value="#{r.vitima_Endereco}"/></p:column>
+					<p:column headerText="parentesco"><h:outputLabel value="#{r.vitima_Endereco}"/></p:column>
+					<p:column headerText="profissão"><h:outputLabel value="#{r.vitima_Endereco}"/></p:column>
+					<p:column headerText="endereço"><h:outputLabel value="#{r.vitima_Endereco}"/></p:column>
+				</p:dataTable>
+			</p:panel>
+			<p:panel>
+				<h:panelGrid>
+					<h:button outcome="listagem_usuario" value="listagem de usuarios"/>
+					<h:button outcome="index" value="deslogar"/>
+				</h:panelGrid>
+			</p:panel>	
+		</h:form>
+	</h:body>
+	
+</xhtml>

@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<xhtml xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+	<h:head><title>Listagem de usuarios</title></h:head>
+	<h:body>
+		<h:form id="formulario5">
+			<p:messages id="messages" showDetail="true" closable="true">
+	            <p:autoUpdate/>
+	        </p:messages>
+	        <p:panel header="listagem">
+	        
+				<p:panel header="listagem de usuarios">
+					<p:dataTable value="#{loginBean.lista}" var="l">
+						<p:column headerText="id_da_conta"><h:outputLabel value="#{l.id}"/> </p:column>
+						<p:column headerText="nome"><h:outputLabel value="#{l.nome}"/> </p:column>
+						<p:column headerText="usuario"><h:outputLabel value="#{l.user}"/></p:column>
+						<p:column headerText="data_de_registro"><h:outputLabel value="#{l.datacadastro}"/></p:column>
+					</p:dataTable>
+				</p:panel>
+				
+				<p:panel header="editar usuario">
+					<h:panelGrid columns="2">
+						<h:outputText value="selecione o id a ser editado:"/>
+						<h:inputText value="#{loginBean.login.id}"/>
+						<h:outputText value="digite o novo nome"/>
+						<h:inputText value="#{loginBean.login.nome}"/>		
+						<h:outputText value="digitie o novo usuario:"/>
+						<h:inputText value="#{loginBean.login.user}"/>
+						<h:outputText value="digite a nova senha:"/>
+						<h:inputSecret value="#{loginBean.login.password}"/>
+						<h:outputText value="data de edição"/>
+						<p:datePicker value="#{loginBean.login.datacadastro}"/>
+						<p:commandButton value="editar" action="#{loginBean.editar}"/>
+					</h:panelGrid>
+				</p:panel>
+				
+				<p:panel header="excluir usuario">
+					<h:panelGrid columns="2">
+						<h:outputText value="selecione o id a ser apagado:"/>
+						<h:inputText value="#{loginBean.login.id}"/>
+						<p:commandButton value="excluir" action="#{loginBean.excluir}"/>
+					</h:panelGrid>
+				</p:panel>
+				
+			</p:panel>
+			
+		</h:form>
+		
+	</h:body>
+	
+	<h:button outcome="index" value="deslogar"/>	
+	
+</xhtml>

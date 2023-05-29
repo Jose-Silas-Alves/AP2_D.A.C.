@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<xhtml xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head><title>Cadastro de incidente</title></h:head>
+	<h:body>
+			<h:form id="formulario4">
+				 <p:messages id="messages" showDetail="true" closable="true">
+	    	        <p:autoUpdate/>
+	        	</p:messages>
+				<p:panel header="Area de cadastro de incidente">
+					<h:panelGrid columns="1">
+						<h:outputLabel value="1º Vitima" style="font-weight:bold" />
+						
+						<h:outputText value="Nome identificado:"/>
+						<h:inputText value="#{relatorioBean.relatorio.vitima_nome}"/>
+					
+						<h:outputText value="Sexo:"/>
+						<p:selectOneRadio value="#{relatorioBean.relatorio.vitima_sexo}">
+							<f:selectItem itemValue="M" itemLabel="M"/>
+							<f:selectItem itemValue="F" itemLabel="F"/>
+						</p:selectOneRadio>
+						
+						<h:outputText value="Idade: "/>
+						<p:datePicker value="#{relatorioBean.relatorio.vitima_idade}"/>
+						
+						<h:outputText value="Serie/Turno:"/>
+						<p:selectOneMenu value="#{relatorioBean.relatorio.vitima_serie}">
+							<f:selectItem itemValue="1" itemLabel="1"/>
+							<f:selectItem itemValue="2" itemLabel="2"/>
+							<f:selectItem itemValue="3" itemLabel="3"/>
+							<f:selectItem itemValue="4" itemLabel="4"/>
+							<f:selectItem itemValue="5" itemLabel="5"/>
+							<f:selectItem itemValue="6" itemLabel="6"/>
+							<f:selectItem itemValue="7" itemLabel="7"/>
+							<f:selectItem itemValue="8" itemLabel="8"/>
+							<f:selectItem itemValue="9" itemLabel="9"/>
+						</p:selectOneMenu>
+						
+						<h:outputText value="Endereço: "/>
+						<h:inputText value="#{relatorioBean.relatorio.vitima_Endereco}"/>
+												
+						<h:outputLabel value="2º Suposto Agressor" style="font-weight:bold" />
+						
+						<h:outputText value="Nome identificado:"/>
+						<h:inputText value="#{relatorioBean.relatorio.agressor_nome}"/>
+					
+						<h:outputText value="Sexo:"/>
+						<p:selectOneRadio value="#{relatorioBean.relatorio.agressor_sexo}">
+							<f:selectItem itemValue="M" itemLabel="M"/>
+							<f:selectItem itemValue="F" itemLabel="F"/>
+						</p:selectOneRadio>
+						
+						<h:outputText value="Idade: "/>
+						<p:datePicker value="#{relatorioBean.relatorio.agressor_idade}"/>
+						
+						<h:outputText value="Grau de parentesco/relacionamento com a vitima"/>
+						<p:selectOneMenu value="#{relatorioBean.relatorio.agressor_parentesco}">
+							<f:selectItem itemValue="Familiar" itemLabel="Familiar	"/>
+							<f:selectItem itemValue="Pai/Mãe" itemLabel="Pai/Mãe"/>
+							<f:selectItem itemValue="Conhecido" itemLabel="Conhecido"/>
+							<f:selectItem itemValue="Desconhecido" itemLabel="Desconhecido"/>	
+						</p:selectOneMenu>
+						
+						<h:outputText value="Ocupação: "/>
+						<h:inputText value="#{relatorioBean.relatorio.agressor_profissao}"/>
+						
+						<h:outputLabel value="2.2º" style="font-weight:bold" />
+						
+						<h:outputText value="Raça:"/>
+						<p:selectOneRadio value="#{relatorioBean.relatorio.raca}">
+							<f:selectItem itemValue="branca" itemLabel="branca	"/>
+							<f:selectItem itemValue="preta" itemLabel="preta"/>
+							<f:selectItem itemValue="parda" itemLabel="parda"/>
+							<f:selectItem itemValue="indigena" itemLabel="indigena"/>
+							<f:selectItem itemValue="amarela" itemLabel="amarela"/>
+						</p:selectOneRadio>
+						
+						<h:outputLabel value="2.3º" style="font-weight:bold" />
+						
+						<h:outputText value="Identidade de gênero:"/>
+						<p:selectOneRadio value="#{relatorioBean.relatorio.genero}">
+							<f:selectItem itemValue="masculino" itemLabel="masculino cissexual"/>
+							<f:selectItem itemValue="feminino cissexual" itemLabel="feminino cissexual"/>
+							<f:selectItem itemValue="masculino transexual" itemLabel="masculino transexual"/>
+							<f:selectItem itemValue="feminino transexual" itemLabel="feminino transexual"/>
+						</p:selectOneRadio>
+						
+						<h:outputLabel value="2.4º" style="font-weight:bold" />
+						
+						<h:outputText value="Orientação sexual:"/>
+						<p:selectOneRadio value="#{relatorioBean.relatorio.orientacaosexual}">
+							<f:selectItem itemValue="heterossexual" itemLabel="heterossexual"/>
+							<f:selectItem itemValue="homossexual" itemLabel="homossexual"/>
+							<f:selectItem itemValue="bissexual" itemLabel="bissexual"/>
+							<f:selectItem itemValue="pansexual" itemLabel="pansexual"/>
+							<f:selectItem itemValue="nao binario" itemLabel="não binario"/>
+							<f:selectItem itemValue="outro" itemLabel="outro"/>
+						</p:selectOneRadio>
+						
+						<h:outputLabel value="2.5º" style="font-weight:bold" />
+						
+						<h:outputText value="Escolaridade:"/>
+						<p:selectOneMenu value="#{relatorioBean.relatorio.escolaridade}">
+							<f:selectItem itemValue="1" itemLabel="1"/>
+							<f:selectItem itemValue="2" itemLabel="2"/>
+							<f:selectItem itemValue="3" itemLabel="3"/>
+							<f:selectItem itemValue="4" itemLabel="4"/>
+							<f:selectItem itemValue="5" itemLabel="5"/>
+							<f:selectItem itemValue="6" itemLabel="6"/>
+							<f:selectItem itemValue="7" itemLabel="7"/>
+							<f:selectItem itemValue="8" itemLabel="8"/>
+							<f:selectItem itemValue="9" itemLabel="9"/>
+						</p:selectOneMenu>
+						<h:outputLabel value="3º Incidente: " style="font-weight:bold" />
+						<h:outputText value=" (relate o que a criança/adolescente) contou para você. Tente ser o mais
+claro possivel, mas não insista com a vitima para que ela diga além do que ela consegue, pois isso pode
+acarretar mais dor para ela."/>
+						<p:inputTextarea rows = "13" cols="150" value="#{relatorioBean.relatorio.incidente}"/>
+						<h:outputLabel value="4º Que tipo de violação de direito: " style="font-weight:bold" />
+						<p:selectOneRadio value="#{relatorioBean.relatorio.violacaodireito}">
+							<f:selectItem itemValue="violencia_fisica" itemLabel="violencia_fisica"/>
+							<f:selectItem itemValue="automutilacao" itemLabel="automutilacao"/>
+							<f:selectItem itemValue="bullying" itemLabel="bullying"/>
+						</p:selectOneRadio>
+						<p:selectOneRadio value="#{relatorioBean.relatorio.violacaodireito}">
+							<f:selectItem itemValue="negligencia" itemLabel="negligencia"/>
+							<f:selectItem itemValue="suicidio" itemLabel="suicidio"/>
+							<f:selectItem itemValue="violencia_sexual" itemLabel="violencia_sexual"/>
+						</p:selectOneRadio>
+						<p:selectOneRadio value="#{relatorioBean.relatorio.violacaodireito}">
+							<f:selectItem itemValue="gravidez_menor_de_14_anos" itemLabel="gravidez_menor_de_14_anos"/>
+							<f:selectItem itemValue="violencia_psicologica" itemLabel="violencia_psicologica"/>
+							<f:selectItem itemValue="trabalho_infantil" itemLabel="trabalho_infantil"/>
+						</p:selectOneRadio>
+						
+						<h:outputText value="data de registro: "/>
+						<p:datePicker value="#{relatorioBean.relatorio.dataregistro}"/>
+						
+						<p:commandButton value="Registrar incidente" action="#{relatorioBean.salvar}" update="formulario4"/>
+						
+						
+					</h:panelGrid>
+				</p:panel>
+			</h:form>
+	</h:body>
+</xhtml>
