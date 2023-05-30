@@ -18,13 +18,14 @@
 					<h:panelGrid columns="1">
 					
 						<h:outputText value="nome de usuario:"/>
-						<h:inputText/>
+						<h:inputText value="#{loginBean.login.user}"
+							required="true" requiredMessage="campo login obrigatorio"/>
 					
 						<h:outputText value="senha:"/>
-						<h:inputSecret/>
+						<h:inputSecret value="#{loginBean.login.password}"
+							required="true" requiredMessage="campo senha obrigatorio"/>
 
 						<p:commandButton value="logar" action="#{loginBean.logar}" update="formulario1"/>
-						<p:button outcome="listagem_incidente" value="proximo"/>
 						
 						<h:button outcome="cadastro_usuario" value="Cadastre-se aqui"/>
 					</h:panelGrid>

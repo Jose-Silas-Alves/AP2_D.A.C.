@@ -1,5 +1,6 @@
 package dao;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -10,6 +11,7 @@ import util.JPAUtil;
 
 public class RelatorioDao {
 	public static void salvar(Relatorio r) {
+		r.setDataregistro(new Date());
 		EntityManager e = JPAUtil.criarEntityManager();
 		e.getTransaction().begin();
 		e.persist(r);

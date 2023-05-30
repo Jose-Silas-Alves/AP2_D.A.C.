@@ -27,10 +27,11 @@ public class LoginBean {
 	}
 	
 	public String logar() {
-		try {
+		try {	
 			LoginDao.logar(login);
 			sucesso("Sucesso","seu Login foi aprovado");
 			login = new Login();
+			return "listagem_incidente.index";
 		} catch (Exception e) {
 			erro("Erro", "seu Login não foi aprovado");
 		}

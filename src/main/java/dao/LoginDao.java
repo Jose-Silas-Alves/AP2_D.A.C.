@@ -1,5 +1,6 @@
 package dao;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -10,6 +11,7 @@ import util.JPAUtil;
 
 public class LoginDao {
 	public static void salvar(Login l) {
+		l.setDatacadastro(new Date());
 		EntityManager em = JPAUtil.criarEntityManager();
 		em.getTransaction().begin();
 		em.persist(l);
